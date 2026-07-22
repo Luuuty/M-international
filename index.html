@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Айсулуу · M-International — Каталог продукции</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <div class="brand">
+      <div class="brand-mark">M</div>
+      <div class="brand-text">minternational<span data-i18n="brandSub">Global Mindset. Local Impact.</span></div>
+    </div>
+    <nav class="links">
+      <a href="#course-pricing" data-i18n="navCatalog">Курсы</a>
+      <a href="#about" data-i18n="navAbout">О компании</a>
+      <a href="#reviews" data-i18n="navReviews">Отзывы</a>
+      <a href="#lessons" data-i18n="navBlog">Блог</a>
+      <a href="#contact" data-i18n="navContact">Контакты</a>
+    </nav>
+    <div class="nav-right">
+      <div class="langswitch">
+        <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
+        <button id="btn-ky" onclick="setLang('ky')">KY</button>
+      </div>
+      <a href="#course-pricing" class="btn gold" data-i18n="navCta">Выбрать курс</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="reveal reveal-left in-view">
+      <div class="hero-brand">
+        <div class="hero-brand-mark">M</div>
+        <div class="hero-brand-text">minternational<span data-i18n="brandSub">GLOBAL MINDSET. LOCAL IMPACT.</span></div>
+      </div>
+      <h1 class="hero-statement" data-i18n="heroTitle">Курсы и продукция M-International: обучение, здоровье и <span>красота</span></h1>
+      <div class="hero-rule"></div>
+      <div class="hero-actions">
+        <a class="hero-call" href="tel:+996707000065"><span>☏</span><span data-i18n="heroCall">Позвонить Айжан</span></a>
+      </div>
+      <div class="hero-values">
+        <div><span>▤</span><small data-i18n="valueKnowledge">Курсы</small></div>
+        <div><span>◎</span><small data-i18n="valueOpportunities">Продукция</small></div>
+        <div><span>↗</span><small data-i18n="valueGrowth">Здоровье</small></div>
+        <div><span>♙</span><small data-i18n="valueCommunity">Красота</small></div>
+        <div><span>◇</span><small data-i18n="valueQuality">Качество</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="leafline wrap"></div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item reveal" style="--delay:0s"><span class="dot"></span><span data-i18n="trust1">100% натуральные компоненты</span></div>
+    <div class="trust-item reveal" style="--delay:.08s"><span class="dot"></span><span data-i18n="trust2">Халяль сертификат</span></div>
+    <div class="trust-item reveal" style="--delay:.16s"><span class="dot"></span><span data-i18n="trust3">Лицензия прямых продаж</span></div>
+    <div class="trust-item reveal" style="--delay:.24s"><span class="dot"></span><span data-i18n="trust4">Доставка по Кыргызстану</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="atmo-light-beams" aria-hidden="true"></div>
+  <div class="atmo-leaf-shadows" aria-hidden="true"></div>
+  <div class="wrap section-head reveal reveal-scale">
+    <p class="eyebrow" data-i18n="aboutEyebrow">О продукции</p>
+    <h2 data-i18n="aboutTitle">Одна философия — три шага заботы о теле</h2>
+    <p data-i18n="aboutLead">Очищение, восстановление и питание — вся линейка M-International построена вокруг этих трёх шагов, чтобы результат от каждого продукта был заметен и держался долго.</p>
+  </div>
+</section>
+
+<section class="video-section" aria-label="Видео Айсулуу">
+  <div class="atmo-light-beams" aria-hidden="true"></div>
+  <div class="atmo-leaf-shadows" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-video-wrap reveal reveal-scale">
+      <div class="hero-video video-preview" id="heroVideo">
+        <span class="tag" data-i18n="heroTag">Прямые продажи</span>
+        <img src="https://img.youtube.com/vi/58yFGVMdz2E/maxresdefault.jpg" alt="Айсулуу · M-International">
+        <button class="play-btn" type="button" onclick="playHeroVideo()" aria-label="Запустить видео"></button>
+        <a class="youtube-link" href="https://youtu.be/58yFGVMdz2E" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="course-pricing" class="course-pricing-section">
+  <div class="atmo-light-beams" aria-hidden="true"></div>
+  <div class="atmo-leaf-shadows" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="coursePriceEyebrow">Цены курса</p>
+      <h2 data-i18n="coursePriceTitle">Выберите удобный формат обучения</h2>
+      <p data-i18n="coursePriceLead">Стоимость можно уточнить у Айсулуу: она подскажет актуальные условия, набор уроков и формат сопровождения.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card reveal reveal-left">
+        <p class="price-label" data-i18n="priceStartLabel">Старт</p>
+        <h3 data-i18n="priceStartTitle">Видео-уроки</h3>
+        <div class="price" data-i18n="priceByRequest">Цена по запросу</div>
+        <ul>
+          <li data-i18n="priceStart1">Доступ к базовым урокам</li>
+          <li data-i18n="priceStart2">Материалы для самостоятельного обучения</li>
+          <li data-i18n="priceStart3">Подходит для знакомства с программой</li>
+        </ul>
+        <a href="https://wa.me/996707000065" target="_blank" class="btn" data-i18n="priceCta">Уточнить цену</a>
+      </div>
+      <div class="price-card featured reveal reveal-scale">
+        <p class="price-label" data-i18n="priceProLabel">Популярный</p>
+        <h3 data-i18n="priceProTitle">Курс с поддержкой</h3>
+        <div class="price" data-i18n="priceByRequest">Цена по запросу</div>
+        <ul>
+          <li data-i18n="pricePro1">Видео-уроки и пошаговый план</li>
+          <li data-i18n="pricePro2">Ответы на вопросы по обучению</li>
+          <li data-i18n="pricePro3">Рекомендации по применению на практике</li>
+        </ul>
+        <a href="https://wa.me/996707000065" target="_blank" class="btn" data-i18n="priceCta">Уточнить цену</a>
+      </div>
+      <div class="price-card reveal reveal-right">
+        <p class="price-label" data-i18n="priceVipLabel">VIP</p>
+        <h3 data-i18n="priceVipTitle">Индивидуально</h3>
+        <div class="price" data-i18n="priceByRequest">Цена по запросу</div>
+        <ul>
+          <li data-i18n="priceVip1">Персональная консультация</li>
+          <li data-i18n="priceVip2">Подбор программы под вашу цель</li>
+          <li data-i18n="priceVip3">Сопровождение и обратная связь</li>
+        </ul>
+        <a href="https://wa.me/996707000065" target="_blank" class="btn" data-i18n="priceCta">Уточнить цену</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lessons" class="lessons-section">
+  <div class="atmo-light-beams" aria-hidden="true"></div>
+  <div class="atmo-leaf-shadows" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="lessonsEyebrow">Видео-уроки</p>
+      <h2 data-i18n="lessonsTitle">Официальные уроки по TikTok, CapCut, ChatGPT и видео</h2>
+      <p data-i18n="lessonsLead">Подборка безопасных обучающих материалов: открываем оригинальные источники, не скачиваем и не перезаливаем чужие видео.</p>
+    </div>
+    <div class="lesson-grid">
+      <article class="lesson-card reveal reveal-left" data-video-id="MzCeRV1I13o">
+        <div class="lesson-thumb">
+          <img src="https://img.youtube.com/vi/MzCeRV1I13o/hqdefault.jpg" alt="TikTok видеоурок на русском">
+          <button type="button" class="lesson-play" onclick="playLessonVideo(this)" aria-label="Запустить TikTok видеоурок">▶</button>
+        </div>
+        <h3 data-i18n="lessonTikTokTitle">TikTok на русском</h3>
+        <p data-i18n="lessonTikTokText">Реальный YouTube-урок по TikTok: запуск, контент и продвижение без перезалива видео.</p>
+        <a href="https://youtu.be/MzCeRV1I13o" target="_blank" rel="noopener" data-i18n="lessonOpenYouTube">Открыть на YouTube →</a>
+      </article>
+      <article class="lesson-card reveal reveal-scale" data-video-id="IoD-zeVB6uk">
+        <div class="lesson-thumb">
+          <img src="https://img.youtube.com/vi/IoD-zeVB6uk/hqdefault.jpg" alt="CapCut видеоурок на русском">
+          <button type="button" class="lesson-play" onclick="playLessonVideo(this)" aria-label="Запустить CapCut видеоурок">▶</button>
+        </div>
+        <h3 data-i18n="lessonCapCutTitle">CapCut на русском</h3>
+        <p data-i18n="lessonCapCutText">Реальный YouTube-урок по CapCut: монтаж, эффекты и приёмы для коротких роликов.</p>
+        <a href="https://youtu.be/IoD-zeVB6uk" target="_blank" rel="noopener" data-i18n="lessonOpenYouTube">Открыть на YouTube →</a>
+      </article>
+      <article class="lesson-card reveal reveal-scale" data-video-id="xKiAYo4E-xY">
+        <div class="lesson-thumb">
+          <img src="https://img.youtube.com/vi/xKiAYo4E-xY/hqdefault.jpg" alt="ChatGPT видеоурок на русском">
+          <button type="button" class="lesson-play" onclick="playLessonVideo(this)" aria-label="Запустить ChatGPT видео">▶</button>
+        </div>
+        <h3 data-i18n="lessonChatGPTTitle">ChatGPT на русском</h3>
+        <p data-i18n="lessonChatGPTText">Реальный YouTube-урок на русском: как начать пользоваться ChatGPT и применять его в задачах.</p>
+        <a href="https://youtu.be/xKiAYo4E-xY" target="_blank" rel="noopener" data-i18n="lessonOpenYouTube">Открыть на YouTube →</a>
+      </article>
+      <article class="lesson-card reveal reveal-right" data-video-id="WSUzHclXaHc">
+        <div class="lesson-thumb">
+          <img src="https://img.youtube.com/vi/WSUzHclXaHc/hqdefault.jpg" alt="Видеомонтаж урок на русском">
+          <button type="button" class="lesson-play" onclick="playLessonVideo(this)" aria-label="Запустить видеоурок YouTube">▶</button>
+        </div>
+        <h3 data-i18n="lessonVideoTitle">Монтаж видео</h3>
+        <p data-i18n="lessonVideoText">Реальный YouTube-урок на русском по монтажу и созданию видео для начинающих.</p>
+        <a href="https://youtu.be/WSUzHclXaHc" target="_blank" rel="noopener" data-i18n="lessonOpenYouTube">Открыть на YouTube →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="catalog">
+  <div class="atmo-light-beams" aria-hidden="true"></div>
+  <div class="atmo-leaf-shadows" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="catEyebrow">Каталог</p>
+      <h2 data-i18n="catTitle">Продукция M-International</h2>
+      <p data-i18n="catLead">Выберите категорию, чтобы найти нужное решение — от детокса до ухода за лицом.</p>
+    </div>
+    <div class="filters reveal" id="filters" style="--delay:.1s"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="reviews" class="reviews-section">
+  <div class="atmo-light-beams" aria-hidden="true"></div>
+  <div class="atmo-leaf-shadows" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="revEyebrow">Отзывы</p>
+      <h2 data-i18n="revTitle">Что говорят клиенты</h2>
+    </div>
+    <div class="testi-grid" id="testiGrid"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal reveal-scale">
+      <div class="contact-inner">
+        <div class="contact-copy">
+          <h2 data-i18n="ctTitle">Готовы начать заботу о здоровье?</h2>
+          <p data-i18n="ctLead">Свяжитесь с нами удобным способом — мы ответим на ваши вопросы и поможем подобрать лучшее решение для вас.</p>
+          <p class="contact-note" data-i18n="ctNote">Отвечаем быстро, работаем каждый день с 9:00 до 21:00.</p>
+        </div>
+        <div class="contact-methods">
+          <a href="https://wa.me/996707000065" target="_blank"><span class="contact-icon">☏</span><span data-i18n="ctWa">Написать в WhatsApp</span><b>→</b></a>
+          <a href="https://t.me/m_intrnational_aizhan" target="_blank"><span class="contact-icon">⌁</span><span data-i18n="ctTg">Написать в Telegram</span><b>→</b></a>
+          <a href="https://www.instagram.com/aizhan__kurmanbek" target="_blank" rel="noopener"><span class="contact-icon">◎</span><span data-i18n="ctInstagram">Написать в Instagram</span><b>→</b></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-main">
+    <div class="footer-brand">
+      <div class="brand compact">
+        <div class="brand-mark">M</div>
+        <div class="brand-text">minternational<span data-i18n="brandSub">Global Mindset. Local Impact.</span></div>
+      </div>
+      <p data-i18n="footText">Образовательная платформа, которая помогает развиваться, учиться и достигать новых вершин вместе с экспертами.</p>
+      <div class="social-links" aria-label="Социальные сети">
+        <a href="https://www.instagram.com/aizhan__kurmanbek" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="YouTube">▻</a>
+        <a href="https://t.me/m_intrnational_aizhan" target="_blank" rel="noopener" aria-label="Telegram">⌁</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3 data-i18n="footerProducts">Продукция</h3>
+      <a href="#catalog" data-i18n="catEyebrow">Каталог</a>
+      <a href="#about" data-i18n="aboutEyebrow">О продукции</a>
+      <a href="#reviews" data-i18n="navReviews">Отзывы</a>
+    </div>
+    <div class="footer-col">
+      <h3 data-i18n="footerContacts">Контакты</h3>
+      <a href="https://wa.me/996707000065" target="_blank" data-i18n="ctWa">Написать в WhatsApp</a>
+      <a href="https://t.me/m_intrnational_aizhan" target="_blank" data-i18n="ctTg">Написать в Telegram</a>
+      <a href="https://www.instagram.com/aizhan__kurmanbek" target="_blank" rel="noopener" data-i18n="ctInstagram">Написать в Instagram</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span data-i18n="footerCopy">© 2024 minternational. Все права защищены.</span>
+    <div>
+      <a href="#" data-i18n="footerPrivacy">Политика конфиденциальности</a>
+      <a href="#" data-i18n="footerAgreement">Пользовательское соглашение</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/996707000065" target="_blank" class="float-wa" aria-label="WhatsApp">💬</a>
+
+<div class="modal-backdrop" id="modalBackdrop" onclick="if(event.target===this) closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-top">
+      <div class="modal-img"><img id="modalImg" src="" alt=""></div>
+      <div class="modal-head">
+        <p class="card-tag" id="modalTag"></p>
+        <h3 id="modalName" style="font-size:1.6rem;"></h3>
+        <p id="modalDesc" style="color:var(--ink-soft); font-size:.92rem;"></p>
+      </div>
+    </div>
+    <div class="modal-content">
+      <h4 id="modalCompH" data-i18n="modalComp">Состав</h4>
+      <div class="chip-list" id="modalComp"></div>
+      <h4 id="modalBenH" data-i18n="modalBen">Польза для здоровья</h4>
+      <ul class="benefit-list" id="modalBen"></ul>
+      <div class="modal-actions">
+        <a href="https://wa.me/996707000065" target="_blank" class="btn" data-i18n="modalOrder">Заказать в WhatsApp</a>
+        <button class="btn ghost" onclick="closeModal()" data-i18n="modalClose">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
