@@ -370,9 +370,24 @@ function closeModal(){
   document.body.style.overflow = '';
 }
 
+function isMobileVideoContext(){
+  return window.matchMedia('(max-width: 760px)').matches || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+}
+
+function openYouTubeVideo(url){
+  const opened = window.open(url, '_blank', 'noopener');
+  if(!opened){
+    window.location.href = url;
+  }
+}
+
 function playHeroVideo(){
   const el = document.getElementById('heroVideo');
   if(!el) return;
+  if(isMobileVideoContext()){
+    openYouTubeVideo('https://youtu.be/58yFGVMdz2E');
+    return;
+  }
   if(window.location.protocol === 'file:'){
     const link = el.querySelector('.youtube-link');
     if(link) link.classList.add('is-highlighted');
@@ -401,6 +416,11 @@ function playLessonVideo(button){
   const thumb = button.closest('.lesson-thumb');
   const videoId = card ? card.dataset.videoId : '';
   if(!thumb || !videoId) return;
+
+  if(isMobileVideoContext()){
+    openYouTubeVideo(`https://youtu.be/${videoId}`);
+    return;
+  }
 
   if(window.location.protocol === 'file:'){
     window.open(`https://youtu.be/${videoId}`, '_blank', 'noopener');
