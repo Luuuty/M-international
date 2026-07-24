@@ -168,7 +168,6 @@ const i18n = {
   navCatalog:{ru:'Курсы', ky:'Курстар'},
   navAbout:{ru:'О компании', ky:'Компания жөнүндө'},
   navReviews:{ru:'Отзывы', ky:'Пикирлер'},
-  navBlog:{ru:'Блог', ky:'Блог'},
   navContact:{ru:'Контакты', ky:'Байланыш'},
   navCta:{ru:'Выбрать курс', ky:'Курс тандоо'},
   heroEyebrow:{ru:'Здоровье и красота · M-International', ky:'Ден соолук жана сулуулук · M-International'},
@@ -240,7 +239,6 @@ const i18n = {
   footerCopy:{ru:'© 2024 minternational. Все права защищены.', ky:'© 2024 minternational. Бардык укуктар корголгон.'},
   footerPrivacy:{ru:'Политика конфиденциальности', ky:'Купуялуулук саясаты'},
   footerAgreement:{ru:'Пользовательское соглашение', ky:'Колдонуучу келишими'},
-  lessonsEyebrow:{ru:'Видео-уроки', ky:'Видео сабактар'},
   coursePriceEyebrow:{ru:'Цены курса', ky:'Курстун баалары'},
   coursePriceTitle:{ru:'Выберите удобный формат обучения', ky:'Окуунун ыңгайлуу форматын тандаңыз'},
   coursePriceLead:{ru:'Стоимость можно уточнить у Айсулуу: она подскажет актуальные условия, набор уроков и формат сопровождения.', ky:'Баасын Айсулуудан тактасаңыз болот: ал актуалдуу шарттарды, сабактар топтомун жана коштоо форматын түшүндүрөт.'},
@@ -261,18 +259,6 @@ const i18n = {
   priceVip2:{ru:'Подбор программы под вашу цель', ky:'Максатыңызга жараша программа тандоо'},
   priceVip3:{ru:'Сопровождение и обратная связь', ky:'Коштоо жана кайтарым байланыш'},
   priceCta:{ru:'Уточнить цену', ky:'Баасын тактоо'},
-  lessonsTitle:{ru:'Официальные уроки по TikTok, CapCut, ChatGPT и видео', ky:'TikTok, CapCut, ChatGPT жана видео боюнча расмий сабактар'},
-  lessonsLead:{ru:'Реальные YouTube-видео: воспроизводим через официальный плеер YouTube, не скачиваем и не перезаливаем чужой контент.', ky:'Чыныгы YouTube видеолору: YouTube расмий плеери аркылуу көрсөтөбүз, башка адамдардын контентин жүктөп алып кайра жарыялабайбыз.'},
-  lessonTikTokTitle:{ru:'Обучение TikTok', ky:'TikTok окуусу'},
-  lessonTikTokText:{ru:'Практический урок по TikTok: запуск, контент и продвижение без перезалива видео.', ky:'TikTok боюнча практикалык сабак: контент, жүргүзүү жана видеону кайра жүктөбөй колдонуу.'},
-  lessonCapCutTitle:{ru:'Обучение CapCut', ky:'CapCut окуусу'},
-  lessonCapCutText:{ru:'Практический урок по CapCut: монтаж, эффекты и приёмы для коротких роликов.', ky:'CapCut боюнча практикалык сабак: монтаж, эффекттер жана кыска роликтер үчүн ыкмалар.'},
-  lessonChatGPTTitle:{ru:'Обучение ChatGPT', ky:'ChatGPT окуусу'},
-  lessonChatGPTText:{ru:'Практический урок: как начать пользоваться ChatGPT и применять его в задачах.', ky:'Практикалык сабак: ChatGPT колдонуп баштоо жана аны тапшырмаларда пайдалануу.'},
-  lessonVideoTitle:{ru:'Монтаж видео', ky:'Видео монтаж'},
-  lessonVideoText:{ru:'Практический урок по монтажу и созданию видео для начинающих.', ky:'Жаңы баштагандар үчүн видео монтаж жана видео түзүү боюнча практикалык сабак.'},
-  lessonOpen:{ru:'Открыть уроки →', ky:'Сабактарды ачуу →'},
-  lessonOpenYouTube:{ru:'Открыть на YouTube →', ky:'YouTubeдан ачуу →'},
   modalComp:{ru:'Состав', ky:'Курамы'},
   modalBen:{ru:'Польза для здоровья', ky:'Ден соолукка пайдасы'},
   modalOrder:{ru:'Заказать в WhatsApp', ky:'WhatsApp аркылуу буйрутма берүү'},
@@ -408,35 +394,6 @@ function playHeroVideo(){
       allowfullscreen>
     </iframe>
     <a class="youtube-link is-floating" href="https://youtu.be/58yFGVMdz2E" target="_blank" rel="noopener">YouTube</a>
-  `;
-}
-
-function playLessonVideo(button){
-  const card = button.closest('.lesson-card');
-  const thumb = button.closest('.lesson-thumb');
-  const videoId = card ? card.dataset.videoId : '';
-  if(!thumb || !videoId) return;
-
-  if(isMobileVideoContext()){
-    openYouTubeVideo(`https://youtu.be/${videoId}`);
-    return;
-  }
-
-  if(window.location.protocol === 'file:'){
-    window.open(`https://youtu.be/${videoId}`, '_blank', 'noopener');
-    return;
-  }
-
-  const origin = window.location.origin && window.location.origin !== 'null'
-    ? `&origin=${encodeURIComponent(window.location.origin)}`
-    : '';
-  thumb.innerHTML = `
-    <iframe
-      src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1${origin}"
-      title="YouTube video lesson"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
   `;
 }
 
