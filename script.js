@@ -13,7 +13,7 @@ const categories = [
 const products = [
   {
     id:'greenmax', category:'detox',
-    image:'https://m-internationall.ru/wp-content/uploads/2022/11/greenmax.jpg',
+    image:'assets/products/greenmax.jpg',
     name:'GreenMAX',
     tag:{ru:'Детокс, очищение кишечника', ky:'Детокс, ичегини тазалоо'},
     desc:{
@@ -28,7 +28,7 @@ const products = [
   },
   {
     id:'mimax', category:'immune',
-    image:'https://m-internationall.ru/wp-content/uploads/2022/11/mimax-1.jpg',
+    image:'assets/products/mimax.jpg',
     name:'MiMAX',
     tag:{ru:'Клеточное питание, омоложение', ky:'Клеткалык тамактануу, жашартуу'},
     desc:{
@@ -43,7 +43,7 @@ const products = [
   },
   {
     id:'blumax', category:'immune',
-    image:'https://m-internationall.ru/wp-content/uploads/2022/11/blumax.jpg',
+    image:'assets/products/blumax.png',
     name:'BluMAX',
     tag:{ru:'Иммунитет, витамин C', ky:'Иммунитет, витамин C'},
     desc:{
@@ -58,7 +58,7 @@ const products = [
   },
   {
     id:'nutrimax', category:'weight',
-    image:'https://m-internationall.ru/wp-content/uploads/2022/11/nutrimax.jpg',
+    image:'assets/products/nutrimax.png',
     name:'NutriMAX',
     tag:{ru:'Жиросжигание, контроль веса', ky:'Май жандыруу, салмакты көзөмөлдөө'},
     desc:{
@@ -73,7 +73,7 @@ const products = [
   },
   {
     id:'kordymax', category:'detox',
-    image:'https://m-internationall.ru/wp-content/uploads/2024/01/product-graphic.png',
+    image:'assets/products/kordymax.jpg',
     name:'KordyMAX',
     tag:{ru:'Кордицепс, энергия', ky:'Кордицепс, энергия'},
     desc:{
@@ -88,7 +88,7 @@ const products = [
   },
   {
     id:'fleximax', category:'joints',
-    image:'https://m-internationall.ru/wp-content/uploads/2024/01/banner2-en.png',
+    image:'assets/products/fleximax.jpg',
     name:'FlexiMax',
     tag:{ru:'Суставы, кости, печень', ky:'Муундар, сөөктөр, боор'},
     desc:{
@@ -103,7 +103,7 @@ const products = [
   },
   {
     id:'machoman', category:'men',
-    image:'https://m-internationall.ru/wp-content/uploads/2024/01/product-1.png',
+    image:'assets/products/machoman.jpg',
     name:'Machoman',
     tag:{ru:'Мужское сексуальное здоровье', ky:'Эркектердин жыныстык ден соолугу'},
     desc:{
@@ -118,7 +118,7 @@ const products = [
   },
   {
     id:'yekaterina', category:'women',
-    image:'https://m-internationall.ru/wp-content/uploads/2022/11/photo_2022-10-12_20-52-03.jpg',
+    image:'assets/products/yekaterina.png',
     name:'Ye-Katerina',
     tag:{ru:'Интим-гель для женщин', ky:'Аялдар үчүн интим-гель'},
     desc:{
@@ -133,7 +133,7 @@ const products = [
   },
   {
     id:'lamor', category:'face',
-    image:'https://m-internationall.ru/wp-content/uploads/2022/11/lamor-1.jpg',
+    image:'assets/products/lamor.png',
     name:'L’amor',
     tag:{ru:'Маска-скраб для лица', ky:'Бет үчүн маска-скраб'},
     desc:{
@@ -314,6 +314,7 @@ function renderGrid(){
     card.style.setProperty('--delay', ((i%3)*0.08)+'s');
     card.innerHTML = `
       <div class="card-img">
+        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
         <div class="product-placeholder" role="img" aria-label="${p.name}">
           <span class="product-logo">M</span>
           <strong>${p.name}</strong>
@@ -348,12 +349,8 @@ function openModal(id){
   const p = products.find(x=>x.id===id);
   if(!p) return;
   const modalImg = document.getElementById('modalImg');
-  modalImg.setAttribute('aria-label', p.name);
-  modalImg.innerHTML = `
-    <span class="product-logo">M</span>
-    <strong>${p.name}</strong>
-    <small>international</small>
-  `;
+  modalImg.src = p.image;
+  modalImg.alt = p.name;
   document.getElementById('modalTag').textContent = p.tag[lang];
   document.getElementById('modalName').textContent = p.name;
   document.getElementById('modalDesc').textContent = p.desc[lang];
