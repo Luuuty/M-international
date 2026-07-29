@@ -99,18 +99,46 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    min-height:640px;
-    height:min(84vh, 800px);
-    padding:112px 0 28px;
+    min-height:560px;
+    height:min(72vh, 700px);
+    padding:112px 0 34px;
     position:relative;
     overflow:hidden;
-    background:linear-gradient(135deg, var(--color-background) 0%, color-mix(in srgb, var(--color-background) 74%, var(--color-text-light)) 46%, var(--color-secondary) 100%);
+    background:
+      radial-gradient(ellipse at 78% 30%, rgba(var(--color-text-light-rgb),.30), transparent 34%),
+      radial-gradient(ellipse at 88% 88%, rgba(var(--color-primary-rgb),.16), transparent 40%),
+      linear-gradient(135deg, var(--color-background) 0%, color-mix(in srgb, var(--color-background) 78%, var(--color-text-light)) 48%, var(--color-secondary) 100%);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:96px;
+    right:0;
+    bottom:0;
+    width:min(54vw, 780px);
+    border-radius:0;
+    background:
+      linear-gradient(90deg, transparent 0%, rgba(var(--color-secondary-rgb),.26) 28%, rgba(var(--color-secondary-rgb),.42) 100%),
+      radial-gradient(ellipse at 72% 28%, rgba(var(--color-text-light-rgb),.36), transparent 36%),
+      radial-gradient(ellipse at 28% 76%, rgba(var(--color-primary-rgb),.14), transparent 40%);
+    border:none;
+    box-shadow:none;
+    pointer-events:none;
   }
   .hero::after{
-    content:none;
+    content:"";
     position:absolute;
-    inset:0;
-    background:none;
+    top:132px;
+    right:max(28px, calc((100vw - 1280px) / 2));
+    width:min(42vw, 580px);
+    height:390px;
+    border-radius:34px;
+    background:
+      repeating-linear-gradient(112deg, transparent 0 42px, rgba(var(--color-accent-rgb),.09) 43px 46px, transparent 47px 84px),
+      radial-gradient(ellipse at 20% 24%, rgba(var(--color-primary-rgb),.10), transparent 34%),
+      radial-gradient(ellipse at 70% 78%, rgba(var(--color-text-light-rgb),.22), transparent 42%);
+    opacity:.72;
+    mask-image:linear-gradient(90deg, transparent 0%, var(--color-text-dark) 22%, var(--color-text-dark) 82%, transparent 100%);
     pointer-events:none;
   }
   .hero > .wrap,
@@ -118,25 +146,25 @@
     position:relative;
     z-index:1;
   }
-  .hero .wrap{display:block;}
+  .hero .wrap{display:block; max-width:1280px;}
   .hero .reveal-left{max-width:560px;}
   .hero-brand{
     display:flex;
     align-items:center;
     gap:18px;
-    margin-bottom:64px;
+    margin-bottom:48px;
   }
   .hero-brand-mark{
     color:var(--color-primary);
     font-family:'PT Serif',serif;
-    font-size:5.1rem;
+    font-size:4.7rem;
     line-height:.82;
     font-weight:700;
     text-shadow:none;
   }
   .hero-brand-text{
     color:var(--color-text-dark);
-    font-size:2.05rem;
+    font-size:1.92rem;
     font-weight:500;
     line-height:1;
   }
@@ -162,14 +190,15 @@
     width:86px;
     height:1px;
     background:linear-gradient(90deg, var(--color-accent), transparent);
-    margin:28px 0 42px;
+    margin:24px 0 34px;
   }
   .hero-values{
     display:flex;
     align-items:flex-start;
-    gap:34px;
+    gap:30px;
     flex-wrap:wrap;
     color:var(--color-accent);
+    max-width:560px;
   }
   .hero-values div{
     display:grid;
@@ -841,11 +870,11 @@
     .hero{
       aspect-ratio:auto;
       height:auto;
-      min-height:680px;
+      min-height:620px;
       padding:152px 0 54px;
-      background-size:cover;
-      background-position:66% center;
     }
+    .hero::before,
+    .hero::after{display:none;}
     section:not(.hero),
     footer{
       --atmo-beam-opacity:.18;
@@ -897,9 +926,8 @@
     }
     nav.links a{font-size:.74rem; padding:6px 10px;}
     .hero{
-      min-height:660px;
+      min-height:620px;
       padding:142px 0 46px;
-      background-position:72% center;
     }
     .hero::after{
       background:none;
@@ -1002,7 +1030,7 @@
     .brand-text{font-size:.88rem;}
     .brand-text span{display:none;}
     .nav-right .btn.primary-cta{font-size:.68rem; padding:8px 9px;}
-    .hero{min-height:640px; padding-top:136px;}
+    .hero{min-height:600px; padding-top:136px;}
     .hero-brand-mark{font-size:2.65rem;}
     .hero-brand-text{font-size:1.02rem;}
     .hero-statement{font-size:.86rem; max-width:286px;}
