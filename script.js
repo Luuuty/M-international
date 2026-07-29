@@ -313,7 +313,13 @@ function renderGrid(){
     card.className = `card reveal ${revealTypes[i % revealTypes.length]}`;
     card.style.setProperty('--delay', ((i%3)*0.08)+'s');
     card.innerHTML = `
-      <div class="card-img"><img src="${p.image}" alt="${p.name}" loading="lazy"></div>
+      <div class="card-img">
+        <div class="product-placeholder" role="img" aria-label="${p.name}">
+          <span class="product-logo">M</span>
+          <strong>${p.name}</strong>
+          <small>international</small>
+        </div>
+      </div>
       <div class="card-body">
         <p class="card-tag">${p.tag[lang]}</p>
         <h3>${p.name}</h3>
@@ -341,8 +347,13 @@ function renderTesti(){
 function openModal(id){
   const p = products.find(x=>x.id===id);
   if(!p) return;
-  document.getElementById('modalImg').src = p.image;
-  document.getElementById('modalImg').alt = p.name;
+  const modalImg = document.getElementById('modalImg');
+  modalImg.setAttribute('aria-label', p.name);
+  modalImg.innerHTML = `
+    <span class="product-logo">M</span>
+    <strong>${p.name}</strong>
+    <small>international</small>
+  `;
   document.getElementById('modalTag').textContent = p.tag[lang];
   document.getElementById('modalName').textContent = p.name;
   document.getElementById('modalDesc').textContent = p.desc[lang];
