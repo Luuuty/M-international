@@ -92,11 +92,11 @@
   <div class="atmo-leaf-shadows" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-video-wrap reveal reveal-scale">
-      <div class="hero-video video-preview" id="heroVideo">
+      <div class="hero-video video-preview" id="heroVideo" role="button" tabindex="0" onclick="playHeroVideo()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playHeroVideo();}">
         <span class="tag" data-i18n="heroTag">Прямые продажи</span>
         <img src="https://img.youtube.com/vi/58yFGVMdz2E/hqdefault.jpg" alt="Айсулуу · M-International" onerror="this.style.display='none'">
-        <button class="play-btn" type="button" onclick="playHeroVideo()" aria-label="Запустить видео"></button>
-        <a class="youtube-link" href="https://youtu.be/58yFGVMdz2E" target="_blank" rel="noopener">YouTube</a>
+        <button class="play-btn" type="button" onclick="event.stopPropagation();playHeroVideo();" aria-label="Запустить видео"></button>
+        <a class="youtube-link" href="https://youtu.be/58yFGVMdz2E" target="_blank" rel="noopener" onclick="event.stopPropagation();">YouTube</a>
       </div>
     </div>
   </div>

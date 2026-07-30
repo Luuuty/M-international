@@ -372,6 +372,11 @@
     box-shadow:0 22px 54px rgba(var(--color-text-dark-rgb),.18), 0 0 0 1px rgba(var(--color-text-light-rgb),.20) inset;
     position:relative;
     display:block;
+    cursor:pointer;
+  }
+  .hero-video:focus-visible{
+    outline:3px solid rgba(var(--color-accent-rgb),.45);
+    outline-offset:4px;
   }
   .hero-video img{
     width:100%;
