@@ -148,6 +148,18 @@ const products = [
   }
 ];
 
+const productVideos = {
+  greenmax:'https://rutube.ru/play/embed/99f4ac674901ea8a36a94b4cb9916971',
+  mimax:'https://rutube.ru/play/embed/e466a88c7ef8511a4fb76cad00377bea',
+  blumax:'https://rutube.ru/play/embed/5f4cd660ff6c97a8b28f6a13f253b159',
+  nutrimax:'https://rutube.ru/play/embed/a6095894690159c9789990565d5c9342',
+  kordymax:'https://rutube.ru/play/embed/a6095894690159c9789990565d5c9342',
+  fleximax:'https://rutube.ru/play/embed/a6095894690159c9789990565d5c9342',
+  machoman:'https://rutube.ru/play/embed/a6095894690159c9789990565d5c9342',
+  yekaterina:'https://rutube.ru/play/embed/4f53b81f0c7a1eaf611109e40f9a7e5d',
+  lamor:'https://rutube.ru/play/embed/4f53b81f0c7a1eaf611109e40f9a7e5d'
+};
+
 const testimonials = [
   {
     ru:{text:'GreenMAX жана NutriMAX ичтим. Боордун майлануусу 3-даражадан 1-даражага түштү, бир жумада 3 кг арыктадым, шишиктер кетти — өзүмдү жеңил сезем!', name:'Таттыгүл'},
@@ -313,6 +325,7 @@ function renderGrid(){
   list.forEach((p,i)=>{
     const card = document.createElement('div');
     const revealTypes = ['reveal-scale', 'reveal-left', 'reveal-right', 'reveal-pop'];
+    const videoSrc = productVideos[p.id];
     card.className = `card reveal ${revealTypes[i % revealTypes.length]}`;
     card.style.setProperty('--delay', ((i%3)*0.08)+'s');
     card.innerHTML = `
@@ -328,15 +341,11 @@ function renderGrid(){
         <p class="card-tag">${p.tag[lang]}</p>
         <h3>${p.name}</h3>
         <p class="card-desc">${p.desc[lang]}</p>
-        <button class="product-video-preview" type="button" onclick="openModal('${p.id}')" aria-label="Видео о ${p.name}">
+        <button class="product-video-preview" type="button" data-video="${videoSrc}" onclick="playProductVideo(this)" aria-label="Видео о ${p.name}">
           <img src="${p.image}" alt="" loading="lazy" onerror="this.style.display='none'">
-          <span class="product-video-brand">M</span>
           <span class="product-video-play">▶</span>
-          <span class="product-video-controls">
-            <span>▶</span>
-            <span>0:00 / 0:35</span>
-            <span>▮▮▮</span>
-          </span>
+          <span class="product-video-brand">M</span>
+          <span class="product-video-label">Смотреть видео</span>
         </button>
         <div class="card-foot">
           <button class="link-more" onclick="openModal('${p.id}')">${t('more')} →</button>
@@ -344,6 +353,14 @@ function renderGrid(){
       </div>`;
     el.appendChild(card);
   });
+}
+
+function playProductVideo(button){
+  const src = button.dataset.video;
+  if(!src) return;
+  const title = button.getAttribute('aria-label') || 'Видео M-International';
+  button.classList.add('is-playing');
+  button.innerHTML = `<iframe src="${src}" title="${title}" loading="lazy" allow="clipboard-write; autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
 }
 
 function renderTesti(){
