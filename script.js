@@ -150,14 +150,8 @@ const products = [
 
 const productVideos = {
   greenmax:'https://rutube.ru/play/embed/99f4ac674901ea8a36a94b4cb9916971',
-  mimax:'https://rutube.ru/play/embed/e466a88c7ef8511a4fb76cad00377bea',
-  blumax:'https://rutube.ru/play/embed/5f4cd660ff6c97a8b28f6a13f253b159',
-  nutrimax:'https://rutube.ru/play/embed/a6095894690159c9789990565d5c9342',
-  kordymax:'https://rutube.ru/play/embed/a6095894690159c9789990565d5c9342',
-  fleximax:'https://rutube.ru/play/embed/a6095894690159c9789990565d5c9342',
-  machoman:'https://rutube.ru/play/embed/a6095894690159c9789990565d5c9342',
-  yekaterina:'https://rutube.ru/play/embed/4f53b81f0c7a1eaf611109e40f9a7e5d',
-  lamor:'https://rutube.ru/play/embed/4f53b81f0c7a1eaf611109e40f9a7e5d'
+  mimax:'https://rutube.ru/play/embed/e4666e76ac3efb6cd2a3634193c5557d',
+  blumax:'https://rutube.ru/play/embed/5f4ede800a99e3a7fb4820030e1dc9ca'
 };
 
 const testimonials = [
@@ -326,6 +320,13 @@ function renderGrid(){
     const card = document.createElement('div');
     const revealTypes = ['reveal-scale', 'reveal-left', 'reveal-right', 'reveal-pop'];
     const videoSrc = productVideos[p.id];
+    const videoBlock = videoSrc ? `
+        <button class="product-video-preview" type="button" data-video="${videoSrc}" onclick="playProductVideo(this)" aria-label="Видео о ${p.name}">
+          <img src="${p.image}" alt="" loading="lazy" onerror="this.style.display='none'">
+          <span class="product-video-play">▶</span>
+          <span class="product-video-brand">M</span>
+          <span class="product-video-label">Смотреть видео</span>
+        </button>` : '';
     card.className = `card reveal ${revealTypes[i % revealTypes.length]}`;
     card.style.setProperty('--delay', ((i%3)*0.08)+'s');
     card.innerHTML = `
@@ -341,12 +342,7 @@ function renderGrid(){
         <p class="card-tag">${p.tag[lang]}</p>
         <h3>${p.name}</h3>
         <p class="card-desc">${p.desc[lang]}</p>
-        <button class="product-video-preview" type="button" data-video="${videoSrc}" onclick="playProductVideo(this)" aria-label="Видео о ${p.name}">
-          <img src="${p.image}" alt="" loading="lazy" onerror="this.style.display='none'">
-          <span class="product-video-play">▶</span>
-          <span class="product-video-brand">M</span>
-          <span class="product-video-label">Смотреть видео</span>
-        </button>
+        ${videoBlock}
         <div class="card-foot">
           <button class="link-more" onclick="openModal('${p.id}')">${t('more')} →</button>
         </div>
