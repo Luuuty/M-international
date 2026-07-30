@@ -13,7 +13,7 @@ const categories = [
 const products = [
   {
     id:'greenmax', category:'detox',
-    image:'assets/products/greenmax.jpg',
+    image:'assets/products/greenmax.png',
     name:'GreenMAX',
     tag:{ru:'Детокс, очищение кишечника', ky:'Детокс, ичегини тазалоо'},
     desc:{
@@ -28,7 +28,7 @@ const products = [
   },
   {
     id:'mimax', category:'immune',
-    image:'assets/products/mimax.jpg',
+    image:'assets/products/mimax.png',
     name:'MiMAX',
     tag:{ru:'Клеточное питание, омоложение', ky:'Клеткалык тамактануу, жашартуу'},
     desc:{
@@ -325,6 +325,16 @@ function renderGrid(){
         <p class="card-tag">${p.tag[lang]}</p>
         <h3>${p.name}</h3>
         <p class="card-desc">${p.desc[lang]}</p>
+        <button class="product-video-preview" type="button" onclick="openModal('${p.id}')" aria-label="Видео о ${p.name}">
+          <img src="${p.image}" alt="" loading="lazy" onerror="this.style.display='none'">
+          <span class="product-video-brand">M</span>
+          <span class="product-video-play">▶</span>
+          <span class="product-video-controls">
+            <span>▶</span>
+            <span>0:00 / 0:35</span>
+            <span>▮▮▮</span>
+          </span>
+        </button>
         <div class="card-foot">
           <button class="link-more" onclick="openModal('${p.id}')">${t('more')} →</button>
         </div>
