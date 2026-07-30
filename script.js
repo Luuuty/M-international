@@ -151,7 +151,13 @@ const products = [
 const productVideos = {
   greenmax:'https://rutube.ru/play/embed/99f4ac674901ea8a36a94b4cb9916971',
   mimax:'https://rutube.ru/play/embed/e4666e76ac3efb6cd2a3634193c5557d',
-  blumax:'https://rutube.ru/play/embed/5f4ede800a99e3a7fb4820030e1dc9ca'
+  blumax:'https://rutube.ru/play/embed/5f4ede800a99e3a7fb4820030e1dc9ca',
+  nutrimax:'https://rutube.ru/play/embed/67d2f3b6a5334dca55cd111a2a8bc910',
+  kordymax:'https://rutube.ru/play/embed/985321f78f6337cc4a231a9a57422d9f',
+  fleximax:'https://rutube.ru/play/embed/4e88cf02adcb595c833234e67566c6e6',
+  machoman:'https://rutube.ru/play/embed/a609588c83448a6df18c2185448740fb',
+  yekaterina:'https://rutube.ru/play/embed/de9b847676660215a00f407fe1ac81a6',
+  lamor:'https://rutube.ru/play/embed/de9b847676660215a00f407fe1ac81a6'
 };
 
 const testimonials = [
