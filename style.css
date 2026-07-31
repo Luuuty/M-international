@@ -948,19 +948,13 @@
     z-index:1;
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;
     gap:22px;
     margin-top:28px;
-    padding:18px 20px;
-    border:1px solid rgba(var(--color-primary-rgb),.18);
-    border-radius:16px;
-    background:rgba(var(--color-card-rgb),.72);
-  }
-  .reviews-cta p{
-    margin:0;
-    max-width:620px;
-    color:var(--ink-soft);
-    font-size:.94rem;
+    padding:0;
+    border:0;
+    border-radius:0;
+    background:transparent;
   }
   .reviews-cta a{
     flex:0 0 auto;
@@ -1443,7 +1437,6 @@
       padding:16px;
       border-radius:14px;
     }
-    .reviews-cta p{font-size:.9rem;}
     .reviews-cta a{min-height:42px; font-size:.84rem;}
     .hero-stats{gap:18px;}
     #contact{padding-top:48px;}
