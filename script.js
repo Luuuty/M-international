@@ -220,6 +220,8 @@ const i18n = {
   catEyebrow:{ru:'Каталог', ky:'Каталог'},
   catTitle:{ru:'Продукция M-International', ky:'M-International продукциясы'},
   catLead:{ru:'Выберите категорию, чтобы найти нужное решение — от детокса до ухода за лицом.', ky:'Керектүү чечимди табуу үчүн категорияны тандаңыз — детокстон бет кароого чейин.'},
+  productVideoChip:{ru:'Видео о продукте', ky:'Продукт тууралуу видео'},
+  productVideoLabel:{ru:'Нажмите, чтобы смотреть', ky:'Көрүү үчүн басыңыз'},
   revEyebrow:{ru:'Пикирлер', ky:'Пикирлер'},
   revTitle:{ru:'Кардарлар эмне дейт', ky:'Кардарлар эмне дейт'},
   revResultsLead:{ru:'Больше живых результатов и отзывов по продукции Айжан публикует в Telegram.', ky:'Продукция боюнча дагы жандуу жыйынтыктарды жана пикирлерди Айжан Telegram каналына чыгарып турат.'},
@@ -332,9 +334,10 @@ function renderGrid(){
     const videoBlock = videoSrc ? `
         <button class="product-video-preview" type="button" data-video="${videoSrc}" onclick="playProductVideo(this)" aria-label="Видео о ${p.name}">
           <img src="${p.image}" alt="" loading="lazy" onerror="this.style.display='none'">
+          <span class="product-video-chip">${t('productVideoChip')}</span>
           <span class="product-video-play">▶</span>
           <span class="product-video-brand">M</span>
-          <span class="product-video-label">Смотреть видео</span>
+          <span class="product-video-label">${t('productVideoLabel')}</span>
         </button>` : '';
     card.className = `card reveal ${revealTypes[i % revealTypes.length]}`;
     card.style.setProperty('--delay', ((i%3)*0.08)+'s');
@@ -363,9 +366,12 @@ function renderGrid(){
 function playProductVideo(button){
   const src = button.dataset.video;
   if(!src) return;
+  if(button.classList.contains('is-playing')) return;
   const title = button.getAttribute('aria-label') || 'Видео M-International';
+  const joiner = src.includes('?') ? '&' : '?';
+  const iframeSrc = `${src}${joiner}autoplay=1`;
   button.classList.add('is-playing');
-  button.innerHTML = `<iframe src="${src}" title="${title}" loading="lazy" allow="clipboard-write; autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+  button.innerHTML = `<iframe src="${iframeSrc}" title="${title}" loading="lazy" allow="clipboard-write; autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
 }
 
 function renderTesti(){
