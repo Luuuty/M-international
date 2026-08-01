@@ -153,11 +153,9 @@ const productVideos = {
   mimax:'assets/videos/mimax.mp4',
   blumax:'assets/videos/blumax.mp4',
   nutrimax:'assets/videos/nutrimax.mp4',
-  kordymax:'assets/videos/kordymax.mp4',
-  fleximax:'assets/videos/fleximax.mp4',
-  machoman:'assets/videos/machoman.mp4',
-  yekaterina:'assets/videos/yekaterina.mp4',
-  lamor:'assets/videos/lamor.mp4'
+  kordymax:'assets/videos/fleximax.mp4',
+  machoman:'assets/videos/kordymax.mp4',
+  yekaterina:'assets/videos/lamor.mp4'
 };
 
 const testimonials = [
