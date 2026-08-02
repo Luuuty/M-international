@@ -174,6 +174,36 @@
     font-size:1rem;
     line-height:1.75;
   }
+  .hero-halal{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    width:fit-content;
+    max-width:540px;
+    margin:-8px 0 24px;
+    padding:10px 14px 10px 10px;
+    border:1px solid var(--color-border);
+    border-radius:999px;
+    background:rgba(var(--color-card-rgb),.82);
+    box-shadow:0 12px 28px rgba(var(--color-text-dark-rgb),.08);
+    color:var(--color-text-dark);
+    font-size:.88rem;
+    font-weight:700;
+    line-height:1.35;
+  }
+  .hero-halal-mark{
+    flex:0 0 auto;
+    min-width:70px;
+    padding:8px 12px;
+    border-radius:999px;
+    background:var(--color-primary);
+    color:var(--color-text-light);
+    text-align:center;
+    font-size:.78rem;
+    font-weight:900;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
   .hero-values{
     display:flex;
     align-items:stretch;
@@ -353,6 +383,91 @@
     height:100%;
     object-fit:contain;
     padding:12px;
+  }
+  .hero-certificates{
+    position:relative;
+    z-index:1;
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:12px;
+    margin-top:2px;
+  }
+  .hero-certificates-head{
+    grid-column:1 / -1;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    color:var(--color-text-dark);
+    font-size:.82rem;
+    font-weight:800;
+  }
+  .hero-certificates-head small{
+    color:var(--color-accent);
+    font-size:.66rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .hero-certificate-photo{
+    min-height:126px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    gap:6px;
+    padding:14px;
+    border-radius:16px;
+    border:1px solid var(--color-border);
+    background:
+      linear-gradient(135deg, rgba(var(--color-card-rgb),.98) 0 62%, rgba(var(--color-border-rgb),.82) 62% 100%),
+      var(--color-card);
+    box-shadow:0 12px 24px rgba(var(--color-text-dark-rgb),.08);
+    overflow:hidden;
+    position:relative;
+  }
+  .hero-certificate-photo::before{
+    content:"";
+    position:absolute;
+    left:14px;
+    right:54px;
+    top:18px;
+    height:7px;
+    border-radius:999px;
+    background:var(--color-border);
+    box-shadow:0 18px 0 var(--color-border), 0 36px 0 rgba(var(--color-border-rgb),.68);
+  }
+  .hero-certificate-photo::after{
+    content:"CERTIFIED";
+    position:absolute;
+    right:-22px;
+    top:22px;
+    transform:rotate(38deg);
+    color:rgba(var(--color-accent-rgb),.22);
+    font-weight:900;
+    letter-spacing:.12em;
+    font-size:.8rem;
+  }
+  .cert-seal{
+    width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:var(--color-primary);
+    color:var(--color-text-light);
+    font-family:'PT Serif',serif;
+    font-size:1.15rem;
+    font-weight:700;
+    box-shadow:0 0 0 6px rgba(var(--color-primary-rgb),.12);
+  }
+  .hero-certificate-photo strong{
+    color:var(--color-text-dark);
+    font-size:.88rem;
+    line-height:1.2;
+  }
+  .hero-certificate-photo small{
+    color:var(--ink-soft);
+    font-size:.68rem;
   }
   .hero-video-wrap{
     width:100%;
@@ -1242,6 +1357,7 @@
     .hero .reveal-left{max-width:560px; padding-top:0;}
     .hero-statement{max-width:520px; font-size:clamp(2.05rem,7vw,3.2rem); line-height:1.06;}
     .hero-lead{max-width:520px; margin:20px 0 28px;}
+    .hero-halal{max-width:520px; margin:-6px 0 22px;}
     .hero-actions{margin-bottom:30px;}
     .hero-call{min-height:42px; padding:10px 15px; font-size:.86rem;}
     .hero-values{gap:0;}
@@ -1254,6 +1370,7 @@
     }
     .hero-product-card.featured-product{min-height:160px;}
     .hero-product-card{min-height:104px;}
+    .hero-certificate-photo{min-height:112px;}
     .hero-video{width:92%; border-radius:18px;}
     .video-section .hero-video{width:100%; max-width:680px; border-radius:18px;}
     .reveal.reveal-left,
@@ -1293,6 +1410,10 @@
       max-width:430px;
       font-size:.95rem;
     }
+    .hero-halal{
+      max-width:430px;
+      font-size:.8rem;
+    }
     .hero-actions{
       gap:10px;
     }
@@ -1323,6 +1444,10 @@
     }
     .hero-product-card{
       min-height:86px;
+    }
+    .hero-certificate-photo{
+      min-height:96px;
+      padding:12px;
     }
   }
   @media (max-width: 560px){
@@ -1355,6 +1480,20 @@
     }
     .hero-eyebrow{font-size:.68rem; letter-spacing:.12em; margin-bottom:14px;}
     .hero-lead{font-size:.92rem; line-height:1.62; margin:18px 0 24px;}
+    .hero-halal{
+      width:100%;
+      max-width:340px;
+      align-items:flex-start;
+      border-radius:16px;
+      margin:-8px 0 20px;
+      padding:10px;
+      font-size:.78rem;
+    }
+    .hero-halal-mark{
+      min-width:58px;
+      padding:7px 9px;
+      font-size:.68rem;
+    }
     .hero-actions{gap:10px; margin-bottom:26px;}
     .hero-primary,
     .hero-results,
@@ -1399,6 +1538,38 @@
       height:auto;
       max-height:none;
       padding:0;
+    }
+    .hero-certificates{
+      gap:10px;
+    }
+    .hero-certificates-head{
+      font-size:.74rem;
+    }
+    .hero-certificates-head small{
+      display:none;
+    }
+    .hero-certificate-photo{
+      min-height:94px;
+      border-radius:14px;
+      padding:12px;
+    }
+    .hero-certificate-photo::before{
+      left:12px;
+      right:46px;
+      top:14px;
+      height:6px;
+      box-shadow:0 15px 0 var(--color-border), 0 30px 0 rgba(var(--color-border-rgb),.68);
+    }
+    .cert-seal{
+      width:32px;
+      height:32px;
+      font-size:1rem;
+    }
+    .hero-certificate-photo strong{
+      font-size:.74rem;
+    }
+    .hero-certificate-photo small{
+      font-size:.6rem;
     }
     section:not(.hero),
     footer{
@@ -1525,9 +1696,12 @@
     .nav-right .btn.primary-cta{font-size:.68rem; padding:8px 9px;}
     .hero{min-height:0; padding-top:132px;}
     .hero-statement{font-size:1.86rem; max-width:300px;}
+    .hero-halal{max-width:300px; font-size:.72rem;}
     .hero-values{max-width:286px;}
     .hero-values span{font-size:1.05rem;}
     .hero-values small{font-size:.56rem;}
+    .hero-certificates{grid-template-columns:1fr;}
+    .hero-certificate-photo{min-height:82px;}
   }
 
   /* ---------- SCROLL REVEAL ---------- */
