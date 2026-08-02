@@ -998,7 +998,7 @@
   /* ---------- CONTACT ---------- */
   #contact{
     background:var(--color-background);
-    padding:74px 0 48px;
+    padding:74px 0 78px;
   }
   .contact{
     color:var(--color-text-dark);
@@ -1055,6 +1055,19 @@
     color:var(--color-text-light);
     padding:0 0 32px;
     font-size:.9rem;
+    position:relative;
+    margin-top:-34px;
+    border-radius:34px 34px 0 0;
+    overflow:hidden;
+    box-shadow:0 -18px 42px rgba(var(--color-text-dark-rgb),.08);
+  }
+  footer::before{
+    content:"";
+    position:absolute;
+    inset:0 0 auto;
+    height:42px;
+    pointer-events:none;
+    background:linear-gradient(180deg, rgba(var(--color-text-light-rgb),.10), rgba(var(--color-text-light-rgb),0));
   }
   .footer-main{
     display:grid;
@@ -1484,7 +1497,7 @@
     }
     .reviews-cta a{min-height:42px; font-size:.84rem;}
     .hero-stats{gap:18px;}
-    #contact{padding-top:48px;}
+    #contact{padding-top:48px; padding-bottom:74px;}
     .contact{border-radius:18px; margin:0;}
     .contact-inner{padding:30px 20px; gap:28px;}
     .contact h2{font-size:1.45rem;}
@@ -1494,7 +1507,11 @@
     .footer-bottom{flex-direction:column;}
     .footer-bottom div{flex-direction:column; gap:12px;}
     .float-wa{width:48px; height:48px; right:14px; bottom:14px; font-size:1.25rem;}
-    footer{padding-bottom:84px;}
+    footer{
+      margin-top:-30px;
+      border-radius:28px 28px 0 0;
+      padding-bottom:84px;
+    }
   }
   @media (max-width: 380px){
     .brand-text{font-size:.88rem;}
