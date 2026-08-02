@@ -191,18 +191,14 @@
     font-weight:700;
     line-height:1.35;
   }
-  .hero-halal-mark{
+  .hero-halal-logo{
     flex:0 0 auto;
-    min-width:70px;
-    padding:8px 12px;
-    border-radius:999px;
-    background:var(--color-primary);
-    color:var(--color-text-light);
-    text-align:center;
-    font-size:.78rem;
-    font-weight:900;
-    letter-spacing:.08em;
-    text-transform:uppercase;
+    width:54px;
+    height:54px;
+    object-fit:contain;
+    border-radius:50%;
+    background:var(--color-card);
+    box-shadow:0 0 0 4px rgba(var(--color-primary-rgb),.08);
   }
   .hero-values{
     display:flex;
@@ -403,11 +399,12 @@
     font-size:.82rem;
     font-weight:800;
   }
-  .hero-certificates-head small{
-    color:var(--color-accent);
-    font-size:.66rem;
-    letter-spacing:.12em;
-    text-transform:uppercase;
+  .hero-cert-head-logo{
+    width:38px;
+    height:38px;
+    object-fit:contain;
+    border-radius:50%;
+    box-shadow:0 0 0 3px rgba(var(--color-primary-rgb),.08);
   }
   .hero-certificate-photo{
     min-height:126px;
@@ -459,6 +456,16 @@
     font-size:1.15rem;
     font-weight:700;
     box-shadow:0 0 0 6px rgba(var(--color-primary-rgb),.12);
+  }
+  .cert-seal-image{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+    border-radius:50%;
+    background:var(--color-card);
+    box-shadow:0 0 0 5px rgba(var(--color-primary-rgb),.10);
+    position:relative;
+    z-index:1;
   }
   .hero-certificate-photo strong{
     color:var(--color-text-dark);
@@ -615,6 +622,14 @@
   .trust-item{display:flex; align-items:center; gap:10px; font-size:.86rem; font-weight:500; flex:1 1 200px;}
   .trust-item .dot{width:8px;height:8px;border-radius:50%;background:var(--color-accent);flex-shrink:0; transition:transform .45s ease, box-shadow .45s ease;}
   .trust-item.in-view .dot{transform:scale(1.45); box-shadow:0 0 0 7px rgba(var(--color-accent-rgb),.18);}
+  .trust-item.halal-trust img{
+    width:30px;
+    height:30px;
+    object-fit:contain;
+    border-radius:50%;
+    background:var(--color-card);
+    flex:0 0 auto;
+  }
 
   /* ---------- SITE-WIDE ATMOSPHERE ---------- */
   section:not(.hero),
@@ -1489,10 +1504,9 @@
       padding:10px;
       font-size:.78rem;
     }
-    .hero-halal-mark{
-      min-width:58px;
-      padding:7px 9px;
-      font-size:.68rem;
+    .hero-halal-logo{
+      width:48px;
+      height:48px;
     }
     .hero-actions{gap:10px; margin-bottom:26px;}
     .hero-primary,
@@ -1545,8 +1559,9 @@
     .hero-certificates-head{
       font-size:.74rem;
     }
-    .hero-certificates-head small{
-      display:none;
+    .hero-cert-head-logo{
+      width:30px;
+      height:30px;
     }
     .hero-certificate-photo{
       min-height:94px;
@@ -1564,6 +1579,10 @@
       width:32px;
       height:32px;
       font-size:1rem;
+    }
+    .cert-seal-image{
+      width:34px;
+      height:34px;
     }
     .hero-certificate-photo strong{
       font-size:.74rem;
