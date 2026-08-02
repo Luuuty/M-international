@@ -336,7 +336,7 @@ function renderGrid(){
         <div class="card-video">
           <video src="${videoSrc}" controls preload="metadata" playsinline></video>
         </div>` : '';
-    card.className = `card reveal ${revealTypes[i % revealTypes.length]}`;
+    card.className = `card reveal ${videoSrc ? '' : 'card-no-video'} ${revealTypes[i % revealTypes.length]}`.replace(/\s+/g,' ').trim();
     card.style.setProperty('--delay', ((i%3)*0.08)+'s');
     card.innerHTML = `
       <div class="card-img"><img src="${p.image}" alt="${p.name}" loading="lazy"></div>
