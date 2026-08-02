@@ -330,19 +330,12 @@ function renderGrid(){
     const videoSrc = productVideos[p.id];
     const videoBlock = videoSrc ? `
         <div class="card-video">
-          <video src="${videoSrc}" controls preload="metadata" playsinline poster="${p.image}" aria-label="Видео о ${p.name}"></video>
+          <video src="${videoSrc}" controls preload="metadata" playsinline></video>
         </div>` : '';
     card.className = `card reveal ${revealTypes[i % revealTypes.length]}`;
     card.style.setProperty('--delay', ((i%3)*0.08)+'s');
     card.innerHTML = `
-      <div class="card-img">
-        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
-        <div class="product-placeholder" role="img" aria-label="${p.name}">
-          <span class="product-logo">M</span>
-          <strong>${p.name}</strong>
-          <small>international</small>
-        </div>
-      </div>
+      <div class="card-img"><img src="${p.image}" alt="${p.name}" loading="lazy"></div>
       <div class="card-body">
         <p class="card-tag">${p.tag[lang]}</p>
         <h3>${p.name}</h3>
