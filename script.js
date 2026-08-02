@@ -413,6 +413,10 @@ function playHeroVideo(){
   const el = document.getElementById('heroVideo');
   if(!el) return;
   if(el.classList.contains('is-playing')) return;
+  if(isMobileVideoContext()){
+    openYouTubeVideo('https://youtu.be/58yFGVMdz2E');
+    return;
+  }
   if(window.location.protocol === 'file:'){
     const link = el.querySelector('.youtube-link');
     if(link) link.classList.add('is-highlighted');
