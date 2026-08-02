@@ -13,7 +13,8 @@ const categories = [
 const products = [
   {
     id:'greenmax', category:'detox',
-    image:'assets/products/greenmax.png',
+    image:'assets/products/greenmax.jpg',
+    video:'assets/videos/greenmax.mp4',
     name:'GreenMAX',
     tag:{ru:'Детокс, очищение кишечника', ky:'Детокс, ичегини тазалоо'},
     desc:{
@@ -28,7 +29,8 @@ const products = [
   },
   {
     id:'mimax', category:'immune',
-    image:'assets/products/mimax.png',
+    image:'assets/products/mimax.jpg',
+    video:'assets/videos/mimax.mp4',
     name:'MiMAX',
     tag:{ru:'Клеточное питание, омоложение', ky:'Клеткалык тамактануу, жашартуу'},
     desc:{
@@ -43,7 +45,8 @@ const products = [
   },
   {
     id:'blumax', category:'immune',
-    image:'assets/products/blumax.png',
+    image:'assets/products/blumax.jpg',
+    video:'assets/videos/blumax.mp4',
     name:'BluMAX',
     tag:{ru:'Иммунитет, витамин C', ky:'Иммунитет, витамин C'},
     desc:{
@@ -58,7 +61,8 @@ const products = [
   },
   {
     id:'nutrimax', category:'weight',
-    image:'assets/products/nutrimax.png',
+    image:'assets/products/nutrimax.jpg',
+    video:'assets/videos/nutrimax.mp4',
     name:'NutriMAX',
     tag:{ru:'Жиросжигание, контроль веса', ky:'Май жандыруу, салмакты көзөмөлдөө'},
     desc:{
@@ -73,7 +77,8 @@ const products = [
   },
   {
     id:'kordymax', category:'detox',
-    image:'assets/products/kordymax.jpg',
+    image:'assets/products/kordymax.png',
+    video:'assets/videos/kordymax.mp4',
     name:'KordyMAX',
     tag:{ru:'Кордицепс, энергия', ky:'Кордицепс, энергия'},
     desc:{
@@ -88,7 +93,8 @@ const products = [
   },
   {
     id:'fleximax', category:'joints',
-    image:'assets/products/fleximax.jpg',
+    image:'assets/products/fleximax.png',
+    video:'assets/videos/fleximax.mp4',
     name:'FlexiMax',
     tag:{ru:'Суставы, кости, печень', ky:'Муундар, сөөктөр, боор'},
     desc:{
@@ -103,7 +109,8 @@ const products = [
   },
   {
     id:'machoman', category:'men',
-    image:'assets/products/machoman.jpg',
+    image:'assets/products/machoman.png',
+    video:'assets/videos/machoman.mp4',
     name:'Machoman',
     tag:{ru:'Мужское сексуальное здоровье', ky:'Эркектердин жыныстык ден соолугу'},
     desc:{
@@ -118,7 +125,8 @@ const products = [
   },
   {
     id:'yekaterina', category:'women',
-    image:'assets/products/yekaterina.png',
+    image:'assets/products/yekaterina.jpg',
+    video:'assets/videos/yekaterina.mp4',
     name:'Ye-Katerina',
     tag:{ru:'Интим-гель для женщин', ky:'Аялдар үчүн интим-гель'},
     desc:{
@@ -133,7 +141,8 @@ const products = [
   },
   {
     id:'lamor', category:'face',
-    image:'assets/products/lamor.png',
+    image:'assets/products/lamor.jpg',
+    video:'assets/videos/lamor.mp4',
     name:'L’amor',
     tag:{ru:'Маска-скраб для лица', ky:'Бет үчүн маска-скраб'},
     desc:{
@@ -145,18 +154,24 @@ const products = [
       ru:['Удаляет омертвевшие клетки кожи','Питает кожу','Антибактериальное и антиоксидантное действие','Естественная защита от солнца','Улучшает упругость кожи','Эффективна при акне','Уменьшает морщины','Осветляет и придаёт сияние'],
       ky:['Өлгөн клеткаларды алып салат','Териге азык берет','Антибактериалдык жана антиоксиданттык таасир','Күндөн табигый коргоо','Теринин серпилгичтигин жакшыртат','Акнеге каршы натыйжалуу','Бырыштарды азайтат','Агартат жана жаркыратат']
     }
+  },
+  {
+    id:'mi-serum', category:'face',
+    image:'assets/products/mi-serum.jpeg',
+    video:'assets/videos/mi-serum.mp4',
+    name:'Mi SERUM',
+    tag:{ru:'Женьшеневая сыворотка, уход за кожей', ky:'Женьшень сывороткасы, териге кам көрүү'},
+    desc:{
+      ru:'Женьшеневая сыворотка на основе стволовых клеток для всех возрастов и типов кожи. Создана на основе экстракта культуры клеток дикого женьшеня и обогащена восстанавливающими экстрактами трав, цветов и растений, а также омолаживающими коллагеновыми пептидами. Помогает глубоко питать кожу и делать её заметно более свежей и revitalизированной.',
+      ky:'Бардык курак жана тери түрлөрү үчүн женьшень негизиндеги сыворотка. Жапайы женьшень клетка культурасынын экстракты, өсүмдүк жана гүл экстракттары, ошондой эле коллаген пептиддери менен байытылган. Терини терең азыктандырып, сергек жана жаңыланган көрүнүш берүүгө жардам берет.'
+    },
+    composition:['Экстракт культуры клеток женьшеня','Экстракт корня женьшеня','Биофлавоноиды','Экстракт брокколи','Экстракт Cynanchum Atratum','Коллагеновые пептиды','Экстракт красной водоросли','Экстракт корня софоры желтеющей','Экстракт плодов годжи','Экстракт эхинацеи пурпурной'],
+    benefits:{
+      ru:['Подходит для всех возрастов и типов кожи','Глубоко питает кожу','Помогает освежить тон лица','Поддерживает восстановление кожи','Дарит более revitalизированный вид','Содержит женьшень и коллагеновые пептиды'],
+      ky:['Бардык куракка жана тери түрүнө ылайыктуу','Терини терең азыктандырат','Беттин өңүн сергитет','Теринин калыбына келишин колдойт','Жаңыланган көрүнүш берүүгө жардам берет','Женьшень жана коллаген пептиддерин камтыйт']
+    }
   }
 ];
-
-const productVideos = {
-  greenmax:'assets/videos/greenmax.mp4',
-  mimax:'assets/videos/mimax.mp4',
-  blumax:'assets/videos/blumax.mp4',
-  nutrimax:'assets/videos/nutrimax.mp4',
-  kordymax:'assets/videos/fleximax.mp4',
-  machoman:'assets/videos/kordymax.mp4',
-  yekaterina:'assets/videos/lamor.mp4'
-};
 
 const testimonials = [
   {
@@ -331,7 +346,7 @@ function renderGrid(){
   list.forEach((p,i)=>{
     const card = document.createElement('div');
     const revealTypes = ['reveal-scale', 'reveal-left', 'reveal-right', 'reveal-pop'];
-    const videoSrc = productVideos[p.id];
+    const videoSrc = p.video || productVideos[p.id];
     const videoBlock = videoSrc ? `
         <div class="card-video">
           <video src="${videoSrc}" controls preload="metadata" playsinline></video>
