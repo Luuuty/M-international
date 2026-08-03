@@ -452,6 +452,33 @@ function playHeroVideo(){
   `;
 }
 
+function setupMobileMenu(){
+  const toggle = document.querySelector('.menu-toggle');
+  const backdrop = document.querySelector('.nav-backdrop');
+  const menu = document.getElementById('siteMenu');
+  if(!toggle || !backdrop || !menu) return;
+
+  const closeMenu = () => {
+    document.body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+  const openMenu = () => {
+    document.body.classList.add('menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  };
+
+  toggle.addEventListener('click', () => {
+    if(document.body.classList.contains('menu-open')) closeMenu();
+    else openMenu();
+  });
+  backdrop.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => {
+    if(event.key === 'Escape') closeMenu();
+  });
+}
+
+setupMobileMenu();
 renderFilters();
 renderGrid();
 renderTesti();

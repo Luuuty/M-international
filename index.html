@@ -16,11 +16,12 @@
       <div class="brand-mark">M</div>
       <div class="brand-text">minternational<span data-i18n="brandSub">Global Mindset. Local Impact.</span></div>
     </div>
-    <nav class="links">
+    <nav class="links" id="siteMenu" aria-label="Site menu">
       <a href="#course-pricing" data-i18n="navCatalog">Курсы</a>
       <a href="#about" data-i18n="navAbout">О компании</a>
       <a href="#reviews" data-i18n="navReviews">Отзывы</a>
       <a href="#contact" data-i18n="navContact">Контакты</a>
+      <a class="drawer-cta" href="#course-pricing" data-i18n="navCta">Выбрать курс</a>
     </nav>
     <div class="nav-right">
       <div class="langswitch">
@@ -28,9 +29,13 @@
         <button id="btn-ky" onclick="setLang('ky')">KY</button>
       </div>
       <a href="#course-pricing" class="btn primary-cta" data-i18n="navCta">Выбрать курс</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="siteMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
+<button class="nav-backdrop" type="button" aria-label="Close menu"></button>
 
 <section class="hero">
   <div class="wrap">

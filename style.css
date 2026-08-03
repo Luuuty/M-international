@@ -33,6 +33,7 @@
     font-family:'Inter',sans-serif;
     line-height:1.55;
   }
+  body.menu-open{overflow:hidden;}
   h1,h2,h3,h4{
     font-family:'PT Serif',serif;
     margin:0 0 .4em 0;
@@ -118,7 +119,43 @@
   .btn.primary-cta:hover{background:var(--color-primary); border-color:var(--color-primary); color:var(--color-text-light);}
   .btn.ghost{background:transparent; color:var(--green); border:1.5px solid var(--green);}
   .btn.ghost:hover{background:var(--green); color:var(--color-text-light);}
-  .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--green-dark);}
+  .drawer-cta{display:none;}
+  .menu-toggle{
+    display:none;
+    width:42px;
+    height:42px;
+    border:1px solid var(--color-border);
+    border-radius:14px;
+    background:rgba(var(--color-card-rgb),.58);
+    cursor:pointer;
+    color:var(--green-dark);
+    padding:0;
+    place-items:center;
+    position:relative;
+  }
+  .menu-toggle span{
+    width:18px;
+    height:2px;
+    border-radius:999px;
+    background:var(--color-text-dark);
+    display:block;
+    transition:transform .22s ease, opacity .22s ease;
+  }
+  .menu-toggle span + span{margin-top:4px;}
+  .menu-open .menu-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .menu-open .menu-toggle span:nth-child(2){opacity:0;}
+  .menu-open .menu-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+  .nav-backdrop{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:45;
+    border:0;
+    background:rgba(var(--color-text-dark-rgb),.28);
+    backdrop-filter:blur(2px);
+    cursor:pointer;
+  }
+  .menu-open .nav-backdrop{display:block;}
 
   /* ---------- HERO ---------- */
   .hero{
@@ -1354,7 +1391,7 @@
       background:var(--color-background);
     }
     .nav{
-      flex-wrap:wrap;
+      flex-wrap:nowrap;
       gap:12px 14px;
       padding:14px 18px 10px;
     }
@@ -1365,6 +1402,11 @@
     .nav-right{
       margin-left:auto;
       gap:8px;
+    }
+    .menu-toggle{
+      display:grid;
+      flex:0 0 42px;
+      z-index:70;
     }
     .nav-right .btn.primary-cta{
       padding:9px 12px;
@@ -1378,25 +1420,45 @@
     }
     .langswitch button{padding:5px 9px;}
     nav.links{
-      order:3;
+      position:fixed;
+      z-index:65;
+      top:0;
+      right:0;
+      bottom:0;
+      width:min(82vw, 330px);
       display:flex;
-      width:100%;
-      gap:8px;
-      overflow-x:auto;
-      padding:2px 0 6px;
-      scrollbar-width:none;
+      flex-direction:column;
+      gap:12px;
+      padding:86px 18px 28px;
+      background:rgba(var(--color-background-rgb),.96);
+      border-left:1px solid var(--color-border);
+      box-shadow:-24px 0 60px rgba(var(--color-text-dark-rgb),.18);
+      transform:translateX(106%);
+      transition:transform .32s cubic-bezier(.2,.8,.2,1);
+      overflow-y:auto;
       -webkit-overflow-scrolling:touch;
     }
-    nav.links::-webkit-scrollbar{display:none;}
+    .menu-open nav.links{transform:translateX(0);}
     nav.links a{
-      flex:0 0 auto;
-      white-space:nowrap;
-      padding:7px 12px;
-      border:1px solid rgba(var(--color-accent-rgb),.30);
-      border-radius:999px;
-      background:rgba(var(--color-text-light-rgb),.40);
-      font-size:.78rem;
+      width:100%;
+      padding:15px 16px;
+      border:1px solid var(--color-border);
+      border-radius:14px;
+      background:rgba(var(--color-card-rgb),.62);
+      box-shadow:0 10px 22px rgba(var(--color-text-dark-rgb),.06);
+      font-size:.92rem;
+      color:var(--color-text-dark);
       opacity:1;
+    }
+    nav.links .drawer-cta{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:6px;
+      background:var(--color-accent);
+      border-color:var(--color-accent);
+      color:var(--color-text-light);
+      font-weight:700;
     }
     .hero{
       aspect-ratio:auto;
@@ -1520,15 +1582,15 @@
     .brand-text{font-size:.98rem;}
     .brand-text span{font-size:.48rem;}
     .nav-right .btn.primary-cta{
-      padding:8px 10px;
-      font-size:.72rem;
+      display:none;
     }
     .langswitch button{padding:5px 8px;}
     nav.links{
-      margin:0 -16px;
-      padding:2px 16px 7px;
+      width:min(86vw, 318px);
+      margin:0;
+      padding:78px 16px 26px;
     }
-    nav.links a{font-size:.74rem; padding:6px 10px;}
+    nav.links a{font-size:.9rem; padding:14px 15px;}
     .hero{
       min-height:0;
       padding:128px 0 34px;
