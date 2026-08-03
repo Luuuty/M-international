@@ -453,34 +453,16 @@
     padding:14px;
     border-radius:16px;
     border:1px solid var(--color-border);
-    background:
-      linear-gradient(135deg, rgba(var(--color-card-rgb),.98) 0 62%, rgba(var(--color-border-rgb),.82) 62% 100%),
-      var(--color-card);
+    background:rgba(var(--color-card-rgb),.92);
     box-shadow:0 12px 24px rgba(var(--color-text-dark-rgb),.08);
     overflow:hidden;
     position:relative;
   }
   .hero-certificate-photo::before{
-    content:"";
-    position:absolute;
-    left:14px;
-    right:54px;
-    top:18px;
-    height:7px;
-    border-radius:999px;
-    background:var(--color-border);
-    box-shadow:0 18px 0 var(--color-border), 0 36px 0 rgba(var(--color-border-rgb),.68);
+    display:none;
   }
   .hero-certificate-photo::after{
-    content:"CERTIFIED";
-    position:absolute;
-    right:-22px;
-    top:22px;
-    transform:rotate(38deg);
-    color:rgba(var(--color-accent-rgb),.22);
-    font-weight:900;
-    letter-spacing:.12em;
-    font-size:.8rem;
+    display:none;
   }
   .cert-seal{
     width:38px;
