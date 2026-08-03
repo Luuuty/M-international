@@ -408,7 +408,7 @@ function renderTesti(){
   const el = document.getElementById('testiGrid');
   if(!el) return;
   el.innerHTML = '';
-  const visibleCount = window.matchMedia('(max-width: 700px)').matches ? 1 : 3;
+  const visibleCount = 3;
   const visible = Array.from({length: Math.min(visibleCount, testimonials.length)}, (_, i) => testimonials[(reviewIndex + i) % testimonials.length]);
   visible.forEach((x,i)=>{
     const d = document.createElement('div');
@@ -518,7 +518,7 @@ function startReviewRotation(){
   reviewTimer = setInterval(() => {
     reviewIndex = (reviewIndex + 1) % testimonials.length;
     renderTesti();
-  }, 5200);
+  }, 2000);
 }
 
 window.addEventListener('resize', () => renderTesti());
@@ -567,4 +567,3 @@ const origRenderTesti = renderTesti;
 renderTesti = function(){ origRenderTesti(); prepareRevealAnimations(); observeReveals(); };
 renderGrid();
 renderTesti();
-
