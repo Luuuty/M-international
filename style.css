@@ -1169,27 +1169,6 @@
     position:relative;
     z-index:1;
   }
-  .reviews-meta{
-    position:relative;
-    z-index:1;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-    margin:-12px 0 26px;
-  }
-  .reviews-meta span{
-    display:inline-flex;
-    align-items:center;
-    min-height:30px;
-    padding:7px 12px;
-    border:1px solid var(--color-border);
-    border-radius:999px;
-    background:rgba(var(--color-card-rgb),.46);
-    color:rgba(var(--color-text-dark-rgb),.66);
-    font-size:.72rem;
-    font-weight:700;
-  }
   .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
   .testi{position:relative; z-index:1; min-height:188px; display:flex; flex-direction:column; justify-content:space-between; background:var(--color-card); border:1px solid var(--color-border); border-radius:var(--radius); padding:22px; box-shadow:0 16px 34px rgba(var(--color-text-dark-rgb),.10); backdrop-filter:none; overflow:hidden; transition:transform .24s ease, box-shadow .24s ease, border-color .24s ease;}
   .testi:hover{transform:translateY(-4px); border-color:rgba(var(--color-accent-rgb),.48); box-shadow:0 20px 42px rgba(var(--color-text-dark-rgb),.14);}
@@ -1878,33 +1857,15 @@
       border-radius:14px;
     }
     .reviews-cta a{min-height:42px; font-size:.84rem;}
-    .reviews-meta{
-      justify-content:flex-start;
-      flex-wrap:nowrap;
-      overflow-x:auto;
-      margin:0 -18px 20px;
-      padding:0 18px 4px;
-      scrollbar-width:none;
-      -webkit-overflow-scrolling:touch;
-    }
-    .reviews-meta::-webkit-scrollbar{display:none;}
-    .reviews-meta span{flex:0 0 auto; font-size:.68rem;}
     .testi-grid{
-      display:flex;
-      gap:14px;
-      margin:0 -18px;
-      padding:0 18px 8px;
-      overflow-x:auto;
-      scroll-snap-type:x mandatory;
-      scrollbar-width:none;
-      -webkit-overflow-scrolling:touch;
+      display:block;
+      margin:0;
+      padding:0;
+      overflow:visible;
     }
-    .testi-grid::-webkit-scrollbar{display:none;}
     .testi{
-      flex:0 0 82%;
       min-height:218px;
       padding:22px;
-      scroll-snap-align:center;
     }
     .testi p{
       font-size:.9rem;

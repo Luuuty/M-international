@@ -265,9 +265,6 @@ const i18n = {
   productVideoLabel:{ru:'Нажмите, чтобы смотреть', ky:'Көрүү үчүн басыңыз'},
   revEyebrow:{ru:'Пикирлер', ky:'Пикирлер'},
   revTitle:{ru:'Кардарлар эмне дейт', ky:'Кардарлар эмне дейт'},
-  revMetaCount:{ru:'9 отзывов', ky:'9 пикир'},
-  revMetaShort:{ru:'Короткие истории', ky:'Кыска окуялар'},
-  revMetaReal:{ru:'Реальный опыт', ky:'Чыныгы тажрыйба'},
   revResultsCta:{ru:'Смотреть результаты продукции', ky:'Продукция жыйынтыктарын көрүү'},
   ctTitle:{ru:'Хотите подобрать курс или продукцию?', ky:'Курс же продукция тандагыңыз келеби?'},
   ctLead:{ru:'Напишите Айжан удобным способом — она расскажет про обучение, продукцию M-International и подберёт формат под ваш запрос.', ky:'Айжанга ыңгайлуу жол менен жазыңыз — ал окуу, M-International продукциясы тууралуу айтып, сурооңузга ылайык формат тандап берет.'},
@@ -331,6 +328,7 @@ const i18n = {
 
 let lang = 'ru';
 let activeCat = 'all';
+let reviewIndex = 0;
 
 function t(key){ return i18n[key] ? i18n[key][lang] : key; }
 
@@ -408,8 +406,11 @@ function playProductVideo(button){
 
 function renderTesti(){
   const el = document.getElementById('testiGrid');
+  if(!el) return;
   el.innerHTML = '';
-  testimonials.forEach((x,i)=>{
+  const visibleCount = window.matchMedia('(max-width: 700px)').matches ? 1 : 3;
+  const visible = Array.from({length: Math.min(visibleCount, testimonials.length)}, (_, i) => testimonials[(reviewIndex + i) % testimonials.length]);
+  visible.forEach((x,i)=>{
     const d = document.createElement('div');
     d.className = `testi reveal ${i % 2 ? 'reveal-right' : 'reveal-left'}`;
     d.style.setProperty('--delay', (i*0.1)+'s');
@@ -509,6 +510,19 @@ setupMobileMenu();
 renderFilters();
 renderGrid();
 renderTesti();
+
+let reviewTimer = null;
+function startReviewRotation(){
+  if(reviewTimer) clearInterval(reviewTimer);
+  if(testimonials.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  reviewTimer = setInterval(() => {
+    reviewIndex = (reviewIndex + 1) % testimonials.length;
+    renderTesti();
+  }, 5200);
+}
+
+window.addEventListener('resize', () => renderTesti());
+startReviewRotation();
 
 /* ---------------- SCROLL REVEAL OBSERVER ---------------- */
 function prepareRevealAnimations(){
