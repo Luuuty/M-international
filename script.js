@@ -512,16 +512,23 @@ renderGrid();
 renderTesti();
 
 let reviewTimer = null;
+function isMobileReviews(){
+  return window.matchMedia('(max-width: 700px)').matches;
+}
 function startReviewRotation(){
   if(reviewTimer) clearInterval(reviewTimer);
-  if(testimonials.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  reviewTimer = null;
+  if(testimonials.length < 2 || isMobileReviews() || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   reviewTimer = setInterval(() => {
     reviewIndex = (reviewIndex + 1) % testimonials.length;
     renderTesti();
   }, 2000);
 }
 
-window.addEventListener('resize', () => renderTesti());
+window.addEventListener('resize', () => {
+  renderTesti();
+  startReviewRotation();
+});
 startReviewRotation();
 
 /* ---------------- SCROLL REVEAL OBSERVER ---------------- */
