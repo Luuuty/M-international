@@ -372,9 +372,10 @@ function renderGrid(){
     const card = document.createElement('div');
     const revealTypes = ['reveal-scale', 'reveal-left', 'reveal-right', 'reveal-pop'];
     const videoSrc = p.video || productVideos[p.id];
+    const videoPoster = videoSrc ? videoSrc.replace('assets/videos/', 'assets/video-posters/').replace(/\.mp4$/, '.jpg') : '';
     const videoBlock = videoSrc ? `
         <div class="card-video">
-          <video src="${videoSrc}" controls preload="metadata" playsinline></video>
+          <video src="${videoSrc}" poster="${videoPoster}" controls preload="metadata" playsinline></video>
         </div>` : '';
     card.className = `card reveal ${videoSrc ? '' : 'card-no-video'} ${revealTypes[i % revealTypes.length]}`.replace(/\s+/g,' ').trim();
     card.style.setProperty('--delay', ((i%3)*0.08)+'s');
